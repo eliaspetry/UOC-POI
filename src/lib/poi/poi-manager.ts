@@ -1,4 +1,3 @@
-// Conectaremos el Poi Manager al reducer que guarda los Pois
 import { pois } from '../store/pois';
 import { getPoiHash } from './hashing';
 import Poi from './poi';
