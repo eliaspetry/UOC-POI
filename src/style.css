@@ -1,0 +1,8 @@
+.menu-closed {
+    max-height: 0 !important;
+    transition: max-height 0.5s ease;
+}
+
+.menu-open {
+    transition: max-height 0.5s ease;
+}
