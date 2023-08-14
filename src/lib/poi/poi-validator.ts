@@ -37,17 +37,17 @@ class PoiValidator {
 	protected isValidMeta(obj: any, meta: object): boolean {
 		const isObject = (obj: any) => typeof obj === 'object' && obj !== null && !Array.isArray(obj);
 
-		// Verificamos que el argumento inicial es un objeto
+		// Verify that the initial argument is an object
 		if (!isObject(obj)) return false;
 
-		// Por cada clave del meta
+		// For each key in meta
 		for (const key in meta) {
-			// Verificamos que el objeto contiene la clave de meta
+			// Assert that the object contains the key
 			if (!(key in obj)) return false;
-			// Si la clave es un objeto, entramos recursivamente y verificamos el siguiente nivel
+			// If the key is an object, dive recursively into the next depth level and validate it
 			// @ts-ignore
 			if (isObject(meta[key])) return this.isValidMeta(obj[key], meta[key]);
-			// Verificamos los tipos
+			// Verify the value types for the keys
 			// @ts-ignore
 			if (meta[key] !== typeof obj[key]) return false;
 		}
