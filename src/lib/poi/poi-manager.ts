@@ -79,7 +79,6 @@ class PoiManager {
 	 * @returns {boolean} True if the input string is valid, else false
 	 */
 	uploadPois(poiJson: string, save: boolean = false): boolean {
-		// Procesamos la string para comprobar su validez
 		try {
 			const json = JSON.parse(poiJson),
 				parsed = this.parsePois(json._pois);
